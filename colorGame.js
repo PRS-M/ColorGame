@@ -8,7 +8,25 @@ var colors = [
 ]
 
 var squares = document.querySelectorAll(".square");
+var pickedColor = colors[3];
+var colorDisplay = document.getElementById("colorDisplay");
+var messageDisplay = document.querySelector("#message");
 
-for (var i=0; i < squares.length; i++){
+colorDisplay.textContent = pickedColor;
+
+for (var i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i]
+
+    //Add click listeners
+    squares[i].addEventListener("click", function(){
+        //Grab color and compare to pickedColor
+        var clickedColor = this.style.backgroundColor;
+        if (clickedColor === pickedColor) {
+            messageDisplay.textContent = "Correct!";
+        }
+        else {
+            this.style.backgroundColor = "#232323";
+            messageDisplay.textContent = "Try Again";
+        }
+    });
 }
