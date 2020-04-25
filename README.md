@@ -1,5 +1,5 @@
 # ColorGame
-Basic JS playground
+Basic JS playground, RGB Colors Guess Game
 ***
 1. VanillaJS
 2. HTML
